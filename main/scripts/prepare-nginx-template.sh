@@ -1,2 +1,2 @@
 #!/bin/sh
-envsubst < /etc/nginx/conf-templates/nginx.conf.template > /etc/nginx/nginx.conf && nginx -g 'daemon off;'
+envsubst < /etc/nginx/conf-templates/nginx.conf.template > /etc/nginx/nginx.conf

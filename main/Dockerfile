@@ -12,7 +12,11 @@ RUN mkdir /etc/nginx/conf-templates
 COPY templates/ /etc/nginx/conf-templates/
 COPY scripts/prepare-nginx-template.sh .
 
+RUN chmod +x prepare-nginx-template.sh
+RUN ./prepare-nginx-template.sh
+
 EXPOSE 80
 EXPOSE 443
 
-CMD ["/bin/sh", "prepare-nginx-template.sh"]
+CMD ["nginx", "-g", "daemon off;"]
+
