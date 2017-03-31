@@ -18,5 +18,4 @@ RUN ./prepare-nginx-template.sh
 EXPOSE 80
 EXPOSE 443
 
-CMD ["nginx", "-g", "daemon off;"]
-
+CMD envsubst < /etc/nginx/conf-templates/nginx.conf.template > /etc/nginx/nginx.conf && nginx -g 'daemon off;';
